@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Play Buddies | Playgroup in Fourways, Johannesburg</title>
-<meta name="description" content="Play Buddies is a warm, family-orientated playgroup in Fourways, Johannesburg. Nurturing children since 2008 through play, creativity and love.">
+<title>Play Buddies | Playgroup in West Beach, Cape Town</title>
+<meta name="description" content="Play Buddies is a warm, family-orientated playgroup in West Beach, Cape Town. Nurturing children since 2008 through play, creativity and love.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -74,6 +74,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse;
 }
 
 .nav-logo img { height: 44px; }
@@ -666,7 +667,8 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 680px) {
-  .burger { display: flex; }
+  .burger { display: flex; order: -1; }
+  .nav-bar { flex-direction: row-reverse; }
   .nav-menu {
     position: fixed;
     top: 68px; left: 0; right: 0;
@@ -677,20 +679,34 @@ img { max-width: 100%; display: block; }
     transform: translateY(-120%);
     transition: transform 0.35s;
     box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+    z-index: 998;
   }
   .nav-menu.show { transform: translateY(0); }
   .nav-menu a { width: 100%; text-align: center; padding: 13px; font-size: 0.95rem; }
 
   .hero-inner img { width: 220px; }
+  .hero h1 { font-size: 1.7rem; }
+  .hero p { font-size: 0.98rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 280px; justify-content: center; }
+
   .feat-grid { grid-template-columns: 1fr; }
   .doc-grid { grid-template-columns: 1fr; }
   .about-pills { grid-template-columns: 1fr; }
+  .about-copy h2 { font-size: 1.6rem; }
   .sec { padding: 64px 0; }
+  .sec-head h2 { font-size: 1.5rem; }
   .gal-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
   .gal-item.wide { grid-column: span 2; }
 
   .tl::before { left: 16px; }
   .tl-dot { margin-left: 8px; width: 15px; height: 15px; }
+  .tl-card { padding: 12px 16px; }
+  .tl-label { font-size: 0.88rem; }
+
+  .test-card { padding: 24px; }
+  .contact-card { padding: 28px; }
+  .contact-map { aspect-ratio: 4/3; }
 }
 </style>
 </head>
@@ -700,7 +716,6 @@ img { max-width: 100%; display: block; }
 <nav class="nav" id="nav">
   <div class="nav-bar">
     <a href="#" class="nav-logo"><img src="logo.png" alt="Play Buddies"></a>
-    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav-menu" id="menu">
       <li><a href="#about">About</a></li>
       <li><a href="#program">Daily Program</a></li>
@@ -710,6 +725,7 @@ img { max-width: 100%; display: block; }
       <li><a href="#documents">Documents</a></li>
       <li class="cta"><a href="#contact">Contact Us</a></li>
     </ul>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
@@ -723,7 +739,7 @@ img { max-width: 100%; display: block; }
   <div class="hero-inner">
     <img src="logo.png" alt="Play Buddies">
     <h1>Where Little Friendships <em>Blossom</em></h1>
-    <p>A warm, loving playgroup in Fourways nurturing little hearts and curious minds since 2008.</p>
+    <p>A warm, loving playgroup in West Beach nurturing little hearts and curious minds since 2008.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn btn-fill">Get In Touch</a>
       <a href="#about" class="btn btn-ghost">Learn More</a>
@@ -779,7 +795,7 @@ img { max-width: 100%; display: block; }
       <div class="tl-row reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-time">10:45 – 11:00</div><div class="tl-label">Bike Time</div></div></div>
       <div class="tl-row reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-time">11:00 – 11:15</div><div class="tl-label">Snack Time</div></div></div>
       <div class="tl-row reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-time">11:15 – 11:45</div><div class="tl-label">Outside Play — Sand, Gross Motor, Water &amp; Messy Play</div></div></div>
-      <div class="tl-row reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-time">11:45 – 12:00</div><div class="tl-label">Clean Up &amp; Story Time</div></div></div>
+      <div class="tl-row reveal"><div class="tl-dot"></div><div class="tl-card"><div class="tl-time">11:45 – 12:30</div><div class="tl-label">Clean Up &amp; Story Time</div></div></div>
     </div>
   </div>
 </section>
@@ -934,11 +950,11 @@ img { max-width: 100%; display: block; }
         </div>
         <div class="c-line">
           <div class="c-ico">📍</div>
-          <div><div class="c-label">Address</div><div class="c-val">24 Crawford Rd, Norscot<br>Fourways, 2055</div></div>
+          <div><div class="c-label">Address</div><div class="c-val">6 Kildonan Close<br>West Beach, Cape Town</div></div>
         </div>
       </div>
       <div class="contact-map reveal">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3584.2!2d28.013!3d-26.028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957382d1fcb1d7%3A0x0!2zMjbCsDAxJzQxLjAiUyAyOMKwMDAnNDcuMCJF!5e0!3m2!1sen!2sza!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Play Buddies Location"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3310.5!2d18.508!3d-33.813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDQ4JzQ3LjAiUyAxOMKwMzAnMjkuMCJF!5e0!3m2!1sen!2sza!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Play Buddies Location"></iframe>
       </div>
     </div>
   </div>
@@ -948,7 +964,7 @@ img { max-width: 100%; display: block; }
 <footer class="footer">
   <img src="logo.png" alt="Play Buddies">
   <p>&copy; 2025 Play Buddies. All rights reserved.</p>
-  <p class="heart">Made with love in Fourways</p>
+  <p class="heart">Made with love in West Beach</p>
 </footer>
 
 <script>
